@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ericthomas-artistesonore.fr/sitemap.xml
