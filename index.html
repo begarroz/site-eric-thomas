@@ -108,13 +108,13 @@
   --ink:#f1efe9;        /* textes clairs : le papier */
   --moss:#a3b4a6;       /* gris-vert clair : l'accent */
   --rule:#2b2b28;       /* filets très légers */
-  --mute:#aeaca3;       /* texte secondaire */
+  --mute:#bdbbb2;       /* texte secondaire */
   --night:#000;         /* fond de l'ouverture, identique au noir de la photo */
   --serif:Helvetica,"Helvetica Neue",Arial,sans-serif;
   --sans:Helvetica,"Helvetica Neue",Arial,sans-serif;
   --rail:9rem;          /* largeur de la colonne de menu à droite */
   --gutter:clamp(1.25rem,7vw,7rem);
-  --voile:.82;          /* assombrissement du fond photo : 0 = photo visible, 1 = noir total */
+  --voile:.75;          /* assombrissement du fond photo : 0 = photo visible, 1 = noir total */
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:3.5rem}
@@ -208,13 +208,7 @@ h1 .metier{display:block;margin-top:.6rem;font:italic 400 clamp(1.3rem,4.5vw,1.7
 
 /* ---------- Sections ---------- */
 .sec{padding:clamp(4rem,9vw,7.5rem) var(--gutter);border-top:1px solid var(--rule)}
-.hero + .sec,.trame + .sec{border-top:0}
-/* Trame : points de demi-teinte dont la taille diminue vers le bas */
-.trame{position:relative;height:clamp(7rem,15vw,11rem);background:var(--night);overflow:hidden}
-.trame::before{content:"";position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 50%,#fff 0,#fff 18%,#000 62%) 0 0/10px 10px,
-             linear-gradient(to bottom,#fff 0%,#808080 100%);
-  background-blend-mode:multiply;filter:contrast(30);opacity:.32}
+.hero + .sec{border-top:0}
 @media (min-width:900px){.sec{padding-right:calc(var(--rail) + 2rem)}}
 .sec > *{max-width:40rem}
 .sec > .large{max-width:46rem}
@@ -227,8 +221,15 @@ p{margin:0 0 1.1rem}
 
 /* Dates */
 .dates{list-style:none;margin:0 0 1.5rem;padding:0}
-.dates li{padding:.9rem 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:9rem 1fr;gap:.25rem 1rem}
-.dates time{font:500 .95rem var(--sans)}
+.dates li{padding:1.1rem 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:5.5rem 1fr;gap:.25rem 1rem}
+.dates li:last-child{border-bottom:1px solid var(--rule)}
+.dates time{font:500 .95rem/1.5 var(--sans);padding-top:.1rem}
+.ev p{margin:0}
+.ev-titre{font:500 1rem/1.45 var(--sans);letter-spacing:.06em;text-transform:uppercase}
+.ev-avec,.ev-lieu{font:.95rem/1.5 var(--sans);color:var(--mute)}
+.ev-avec{margin-top:.25rem}
+h2 + h3{margin-top:0}
+@media (max-width:560px){.dates li{grid-template-columns:4.25rem 1fr}}
 
 /* Écouter */
 .disc{margin:0 0 2.5rem}
@@ -312,35 +313,59 @@ footer p{margin:0}
     </figure>
   </section>
 
-  <!-- Bande décorative en trame (points de demi-teinte), sans contenu -->
-  <div class="trame" aria-hidden="true"></div>
-
   <!-- ======================= EVENTS (dates) ======================= -->
   <section class="sec" id="events" aria-labelledby="t-events">
     <h2 id="t-events"><span data-l="fr">Events</span><span data-l="en">Events</span></h2>
-
     <!--
-      COMMENT AJOUTER DES DATES (classement par année, la plus récente en premier : 2027, 2026, 2025…)
-      1. Supprimez les deux blocs « Pas de date annoncée » ci-dessous (FR et EN).
-      2. Copiez le modèle ci-dessous, collez-le à leur place, enlevez les marques de commentaire
-         (la flèche de début et celle de fin) et remplacez les textes.
-      3. Une nouvelle année = un nouveau bloc <h3> + <ol>, placé AVANT l'année précédente.
-         Une nouvelle date = une ligne <li> ... </li> de plus dans l'<ol> de son année.
-
-      <h3>2027</h3>
-      <ol class="dates">
-        <li>
-          <time datetime="2027-03-14"><span data-l="fr">14 mars</span><span data-l="en">14 March</span></time>
-          <span>Nom du lieu ou de l'événement, Ville (Pays) <a href="https://adresse-de-l-evenement.example" target="_blank" rel="noopener">Informations</a></span>
-        </li>
-      </ol>
+      COMMENT AJOUTER UN ÉVÉNEMENT
+      Classement par année (la plus récente en premier : 2027, 2026, 2025…), et dans chaque année du plus récent au plus ancien.
+      - Nouvelle date dans une année existante : copiez un bloc <li> ... </li> et placez-le à sa bonne place dans la liste.
+      - Nouvelle année : copiez un bloc <h3>année</h3> + <ol class="dates"> ... </ol> et placez-le AVANT l'année précédente.
+      - Sans « avec … », supprimez simplement la ligne <p class="ev-avec">.
+      Modèle :
+      <li>
+        <time datetime="2027-03-14">14.03</time>
+        <div class="ev">
+          <p class="ev-titre">Titre</p>
+          <p class="ev-avec"><span data-l="fr">avec Prénom Nom</span><span data-l="en">with Prénom Nom</span></p>
+          <p class="ev-lieu">@ Lieu, Ville [29] Fr</p>
+        </div>
+      </li>
     -->
-    <div data-l="fr">
-      <p class="vide">Pas de date annoncée pour le moment.</p>
-    </div>
-    <div data-l="en">
-      <p class="vide">No dates announced for now.</p>
-    </div>
+    <h3>2026</h3>
+    <ol class="dates">
+      <li>
+        <time datetime="2026-10-27">27.10</time>
+        <div class="ev">
+          <p class="ev-titre">Les hommes devant moi comme des ombres</p>
+          <p class="ev-avec"><span data-l="fr">avec Sylvain Prunenec</span><span data-l="en">with Sylvain Prunenec</span></p>
+          <p class="ev-lieu">@ Radio FarWest, Penmac’h [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-10-27">27.10</time>
+        <div class="ev">
+          <p class="ev-titre">Tournerie</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant</span><span data-l="en">with Florian Stéphant</span></p>
+          <p class="ev-lieu">@ Radio FarWest, Penmac’h [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-10-26">26.10</time>
+        <div class="ev">
+          <p class="ev-titre">Faire chanter Penmac’h</p>
+          <p class="ev-avec"><span data-l="fr">avec Aurélie Brousse</span><span data-l="en">with Aurélie Brousse</span></p>
+          <p class="ev-lieu">@ Radio FarWest, Penmac’h [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-10-11">11.10</time>
+        <div class="ev">
+          <p class="ev-titre">Solus</p>
+          <p class="ev-lieu">@ <span data-l="fr">chez l’habitant</span><span data-l="en">private home</span>, Logonna-Daoulas [29] Fr</p>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <!-- ======================= ÉCOUTER ======================= -->
@@ -348,15 +373,6 @@ footer p{margin:0}
     <h2 id="t-ecoute"><span data-l="fr">Écoute</span><span data-l="en">Listen</span></h2>
 
     <ul class="pieces">
-      <li>
-        <span class="titre">Fouesnant, mes carnets sonores <span class="an">(2024)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/fouesnant-mes-carnets-sonores">
-          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
-          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
-        </button>
-        <a class="sr" href="https://soundcloud.com/eric_thomas_artiste-sonore/fouesnant-mes-carnets-sonores" rel="noopener">SoundCloud : Fouesnant, mes carnets sonores</a>
-        <div class="player" hidden></div>
-      </li>
       <li>
         <span class="titre">Oscillations Base <span class="an">(2025)</span></span>
         <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/oscillations-base">
@@ -367,21 +383,30 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
+        <span class="titre">Tournerie <span class="an">(2024)</span></span>
+        <button type="button" class="btn petit play" aria-expanded="false" data-embed="bandcamp" data-id="3741192901">
+          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
+          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
+        </button>
+        <a class="sr" href="https://tournerie.bandcamp.com/album/copeaux" rel="noopener">Bandcamp : Tournerie, Copeaux</a>
+        <div class="player" hidden></div>
+      </li>
+      <li>
+        <span class="titre">Fouesnant, mes carnets sonores <span class="an">(2024)</span></span>
+        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/fouesnant-mes-carnets-sonores">
+          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
+          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
+        </button>
+        <a class="sr" href="https://soundcloud.com/eric_thomas_artiste-sonore/fouesnant-mes-carnets-sonores" rel="noopener">SoundCloud : Fouesnant, mes carnets sonores</a>
+        <div class="player" hidden></div>
+      </li>
+      <li>
         <span class="titre">23'56 – détails typographiques et sonores <span class="an">(2023)</span></span>
         <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/2356_details-typographiques-et">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
         <a class="sr" href="https://soundcloud.com/eric_thomas_artiste-sonore/2356_details-typographiques-et" rel="noopener">SoundCloud : 23'56 détails typographiques et sonores</a>
-        <div class="player" hidden></div>
-      </li>
-      <li>
-        <span class="titre">La Rencontre, avec Tuyen <span class="an">(2026)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/la-rencontre-avec-tuyen">
-          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
-          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
-        </button>
-        <a class="sr" href="https://soundcloud.com/eric_thomas_artiste-sonore/la-rencontre-avec-tuyen" rel="noopener">SoundCloud : La Rencontre, avec Tuyen</a>
         <div class="player" hidden></div>
       </li>
       <li>
@@ -403,6 +428,15 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
+        <span class="titre">Thomas James Folks <span class="an">(2018)</span></span>
+        <button type="button" class="btn petit play" aria-expanded="false" data-embed="bandcamp" data-id="4172337020">
+          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
+          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
+        </button>
+        <a class="sr" href="https://begroserecords.bandcamp.com/album/thomas-james-folks" rel="noopener">Bandcamp : Thomas James Folks</a>
+        <div class="player" hidden></div>
+      </li>
+      <li>
         <span class="titre">Found Small Extended Forms <span class="an">(2017)</span></span>
         <button type="button" class="btn petit play" aria-expanded="false" data-embed="bandcamp" data-id="3431232027">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
@@ -412,12 +446,21 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Thomas James Folks <span class="an">(2018)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="bandcamp" data-id="4172337020">
+        <span class="titre">33 à 3 <span class="an">(2012)</span></span>
+        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/bargeon-briet-pointard-thomas">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
-        <a class="sr" href="https://begroserecords.bandcamp.com/album/thomas-james-folks" rel="noopener">Bandcamp : Thomas James Folks</a>
+        <a class="sr" href="https://soundcloud.com/begarrozpublishing/bargeon-briet-pointard-thomas" rel="noopener">SoundCloud : 33 à 3</a>
+        <div class="player" hidden></div>
+      </li>
+      <li>
+        <span class="titre">Minuscule <span class="an">(2012)</span></span>
+        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/ric-thomas-laurent-paris-la">
+          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
+          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
+        </button>
+        <a class="sr" href="https://soundcloud.com/begarrozpublishing/ric-thomas-laurent-paris-la" rel="noopener">SoundCloud : Minuscule</a>
         <div class="player" hidden></div>
       </li>
     </ul>
