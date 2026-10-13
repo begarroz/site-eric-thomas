@@ -225,7 +225,7 @@ p{margin:0 0 1.1rem}
 .dates li:last-child{border-bottom:1px solid var(--rule)}
 .dates time{font:500 .95rem/1.5 var(--sans);padding-top:.1rem}
 .ev p{margin:0}
-.ev-titre{font:500 1rem/1.45 var(--sans);letter-spacing:.06em;text-transform:uppercase}
+.ev-titre{font:500 1rem/1.45 var(--sans);letter-spacing:.04em}
 .ev-avec,.ev-lieu{font:.95rem/1.5 var(--sans);color:var(--mute)}
 .ev-avec{margin-top:.25rem}
 h2 + h3{margin-top:0}
@@ -332,11 +332,12 @@ footer p{margin:0}
       - Nouvelle date dans une année existante : copiez un bloc <li> ... </li> et placez-le à sa bonne place dans la liste.
       - Nouvelle année : copiez un bloc <h3>année</h3> + <ol class="dates"> ... </ol> et placez-le AVANT l'année précédente.
       - Sans « avec … », supprimez simplement la ligne <p class="ev-avec">.
+      - Les titres sont écrits tels qu'ils doivent s'afficher (en capitales si vous le souhaitez).
       Modèle :
       <li>
         <time datetime="2027-03-14">14.03</time>
         <div class="ev">
-          <p class="ev-titre">Titre</p>
+          <p class="ev-titre">TITRE</p>
           <p class="ev-avec"><span data-l="fr">avec Prénom Nom</span><span data-l="en">with Prénom Nom</span></p>
           <p class="ev-lieu">@ Lieu, Ville [29] Fr</p>
         </div>
@@ -345,34 +346,187 @@ footer p{margin:0}
     <h3>2026</h3>
     <ol class="dates">
       <li>
-        <time datetime="2026-10-27">27.10</time>
+        <time datetime="2026-09-28">28.09</time>
         <div class="ev">
-          <p class="ev-titre">Les hommes devant moi comme des ombres</p>
+          <p class="ev-titre">SOLUS</p>
+          <p class="ev-lieu">@ festival C.A.M.P., Lorient [56] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-09-27">27.09</time>
+        <div class="ev">
+          <p class="ev-titre">LES HOMMES DEVANT MOI COMME DES OMBRES</p>
           <p class="ev-avec"><span data-l="fr">avec Sylvain Prunenec</span><span data-l="en">with Sylvain Prunenec</span></p>
           <p class="ev-lieu">@ Radio FarWest, Penmac’h [29] Fr</p>
         </div>
       </li>
       <li>
-        <time datetime="2026-10-27">27.10</time>
+        <time datetime="2026-09-27">27.09</time>
         <div class="ev">
-          <p class="ev-titre">Tournerie</p>
+          <p class="ev-titre">TOURNERIE</p>
           <p class="ev-avec"><span data-l="fr">avec Florian Stéphant</span><span data-l="en">with Florian Stéphant</span></p>
           <p class="ev-lieu">@ Radio FarWest, Penmac’h [29] Fr</p>
         </div>
       </li>
       <li>
-        <time datetime="2026-10-26">26.10</time>
+        <time datetime="2026-09-26">26.09</time>
         <div class="ev">
-          <p class="ev-titre">Faire chanter Penmac’h</p>
+          <p class="ev-titre">FAIRE CHANTER PENMAC’H</p>
           <p class="ev-avec"><span data-l="fr">avec Aurélie Brousse</span><span data-l="en">with Aurélie Brousse</span></p>
           <p class="ev-lieu">@ Radio FarWest, Penmac’h [29] Fr</p>
         </div>
       </li>
       <li>
-        <time datetime="2026-10-11">11.10</time>
+        <time datetime="2026-09-21">21-23.09</time>
         <div class="ev">
-          <p class="ev-titre">Solus</p>
+          <p class="ev-titre">LA FÊTE À VENIR</p>
+          <p class="ev-avec"><span data-l="fr">résidence avec Sandrine Bodénès</span><span data-l="en">residency with Sandrine Bodénès</span></p>
+          <p class="ev-lieu">@ Théâtre de Morlaix, Morlaix [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-09-19">19.09</time>
+        <div class="ev">
+          <p class="ev-titre"><span data-l="fr">Avant-première du film “JE VOUS ENVOIE LE CANAL DE PANAMA” de Thierry Salvert</span><span data-l="en">Preview of the film “JE VOUS ENVOIE LE CANAL DE PANAMA” by Thierry Salvert</span></p>
+          <p class="ev-lieu">@ Auditorium du Quattro, Baud [56] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-09-11">11.09</time>
+        <div class="ev">
+          <p class="ev-titre">SOLUS</p>
           <p class="ev-lieu">@ <span data-l="fr">chez l’habitant</span><span data-l="en">private home</span>, Logonna-Daoulas [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-06-26">26.06</time>
+        <div class="ev">
+          <p class="ev-titre">OSCILLATIONS BASE</p>
+          <p class="ev-avec"><span data-l="fr">avec Aurélie Brousse</span><span data-l="en">with Aurélie Brousse</span></p>
+          <p class="ev-lieu">@ Rencontres du film documentaire #20, Mellionnec [22] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-06-23">23.06</time>
+        <div class="ev">
+          <p class="ev-titre"><span data-l="fr">Avant-première du film “BRIGNEAU, UNE FENÊTRE OUVERTE” de Stéphane Bégoin</span><span data-l="en">Preview of the film “BRIGNEAU, UNE FENÊTRE OUVERTE” by Stéphane Bégoin</span></p>
+          <p class="ev-lieu">@ Cinéma Le Kerfany, Moëlan/Mer [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-04-26">26.04</time>
+        <div class="ev">
+          <p class="ev-titre">trio CARNET / JAMES / THOMAS</p>
+          <p class="ev-lieu">@ La Patte d’Oie, Douarnenez [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-04-04">04.04</time>
+        <div class="ev">
+          <p class="ev-titre"><span data-l="fr">Avant-première du film “LE CUEILLEUR de MÉMOIRES” de Samuel Poisson-Quinton</span><span data-l="en">Preview of the film “LE CUEILLEUR de MÉMOIRES” by Samuel Poisson-Quinton</span></p>
+          <p class="ev-lieu">@ Cinéma des familles, Groix [56] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-03-28">28.03</time>
+        <div class="ev">
+          <p class="ev-titre">SOLUS</p>
+          <p class="ev-lieu">@ Vin’eel Records, Dinan [22] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-03-25">25.03</time>
+        <div class="ev">
+          <p class="ev-titre">SOLUS</p>
+          <p class="ev-lieu">@ La Grande Boutique, Langonnet [56] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2026-03-02">02-04.03</time>
+        <div class="ev">
+          <p class="ev-titre">LA FÊTE À VENIR</p>
+          <p class="ev-avec"><span data-l="fr">résidence avec Sandrine Bodénès</span><span data-l="en">residency with Sandrine Bodénès</span></p>
+          <p class="ev-lieu">@ Théâtre La Paillette, Rennes [35] Fr</p>
+        </div>
+      </li>
+    </ol>
+    <h3>2025</h3>
+    <ol class="dates">
+      <li>
+        <time datetime="2025-12-12">12.12</time>
+        <div class="ev">
+          <p class="ev-titre"><span data-l="fr">Avant-première du film “RIPEURS” de Erwann Babin</span><span data-l="en">Preview of the film “RIPEURS” by Erwann Babin</span></p>
+          <p class="ev-lieu">@ CinéBreiz, Rostrenen [22] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-07-27">27.07</time>
+        <div class="ev">
+          <p class="ev-titre">SOLUS</p>
+          <p class="ev-lieu">@ Languedias [22] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-06-14">14.06</time>
+        <div class="ev">
+          <p class="ev-titre">TOURNERIE</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant (Revox B77)</span><span data-l="en">with Florian Stéphant (Revox B77)</span></p>
+          <p class="ev-lieu">@ Kerminy, Rosporden [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-06-13">13.06</time>
+        <div class="ev">
+          <p class="ev-titre">TOURNERIE</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant (Revox B77)</span><span data-l="en">with Florian Stéphant (Revox B77)</span></p>
+          <p class="ev-lieu">@ festival In Cité, Rostrenen [22] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-06-08">08.06</time>
+        <div class="ev">
+          <p class="ev-titre">TOURNERIE</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant (Revox B77)</span><span data-l="en">with Florian Stéphant (Revox B77)</span></p>
+          <p class="ev-lieu">@ Café Théodore, Trédrez-Locquémeau [22] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-06-07">07.06</time>
+        <div class="ev">
+          <p class="ev-titre">TOURNERIE</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant (Revox B77)</span><span data-l="en">with Florian Stéphant (Revox B77)</span></p>
+          <p class="ev-lieu">@ Ligne 21, Plogonnec [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-06-06">06.06</time>
+        <div class="ev">
+          <p class="ev-titre">TOURNERIE</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant (Revox B77)</span><span data-l="en">with Florian Stéphant (Revox B77)</span></p>
+          <p class="ev-lieu">@ Flux, Quimper [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-06-05">05.06</time>
+        <div class="ev">
+          <p class="ev-titre">TOURNERIE</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant (Revox B77)</span><span data-l="en">with Florian Stéphant (Revox B77)</span></p>
+          <p class="ev-lieu">@ Galerie FarWest, St-Guénolé [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-06-03">03.06</time>
+        <div class="ev">
+          <p class="ev-titre">TOURNERIE</p>
+          <p class="ev-avec"><span data-l="fr">avec Florian Stéphant (Revox B77)</span><span data-l="en">with Florian Stéphant (Revox B77)</span></p>
+          <p class="ev-lieu">@ Les bons concerts du docteur Paugam, Douarnenez [29] Fr</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2025-05-15">15.05</time>
+        <div class="ev">
+          <p class="ev-titre">SOLUS</p>
+          <p class="ev-lieu">@ Music Europa Breizh, Lorient [56] Fr</p>
         </div>
       </li>
     </ol>
@@ -384,7 +538,7 @@ footer p{margin:0}
 
     <ul class="pieces">
       <li>
-        <span class="titre">Oscillations Base <span class="an">(2025)</span><span class="info" id="info-1"><span data-l="fr">Avec Aurélie Brousse. Un portrait sonore d’une pointe de terre derrière la base sous-marine de Lorient, habitée de récits de départs, de liberté et d’ailleurs.</span><span data-l="en">With Aurélie Brousse. A sound portrait of a headland behind the Lorient submarine base, home to stories of departure, freedom and elsewhere.</span></span></span>
+        <span class="titre">Oscillations Base <span class="an">(2025)</span><span class="info" id="info-1"><span data-l="fr">avec Aurélie Brousse. Le portrait sonore d’une pointe de terre derrière la base sous-marine de Lorient, habitée de récits de départs, de liberté et d’ailleurs.</span><span data-l="en">with Aurélie Brousse. The sound portrait of a headland behind the Lorient submarine base, home to stories of departure, freedom and elsewhere.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-1" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/oscillations-base">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
@@ -393,7 +547,7 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Tournerie <span class="an">(2024)</span><span class="info" id="info-2"><span data-l="fr">Avec Florian Stéphant (Revox B77). « Copeaux », huit échantillons taillés dans des improvisations réalisées au Beg, le 17 mai 2024.</span><span data-l="en">With Florian Stéphant (Revox B77). “Copeaux”, eight samples cut from improvisations made at Beg on 17 May 2024.</span></span></span>
+        <span class="titre">Tournerie <span class="an">(2024)</span><span class="info" id="info-2"><span data-l="fr">avec Florian Stéphant (Revox B77). « Copeaux », huit échantillons taillés dans des improvisations réalisées au Beg, le 17 mai 2024.</span><span data-l="en">with Florian Stéphant (Revox B77). “Copeaux”, eight samples cut from improvisations made at Beg on 17 May 2024.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-2" aria-expanded="false" data-embed="bandcamp" data-id="3741192901">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
@@ -402,7 +556,7 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Fouesnant, mes carnets sonores <span class="an">(2024)</span><span class="info" id="info-3"><span data-l="fr">Pièce sonore de 29 minutes.</span><span data-l="en">Sound piece, 29 minutes.</span></span></span>
+        <span class="titre">Fouesnant, mes carnets sonores <span class="an">(2024)</span><span class="info" id="info-3"><span data-l="fr">En douze mouvements, un voyage et une cartographie sonore subjective de la ville de Fouesnant.</span><span data-l="en">In twelve movements, a journey and a subjective sound map of the town of Fouesnant.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-3" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/fouesnant-mes-carnets-sonores">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
@@ -411,7 +565,7 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">23'56 – détails typographiques et sonores <span class="an">(2023)</span><span class="info" id="info-4"><span data-l="fr">Pièce sonore de 23 minutes et 56 secondes.</span><span data-l="en">Sound piece, 23 minutes 56 seconds.</span></span></span>
+        <span class="titre">23'56 – détails typographiques et sonores <span class="an">(2023)</span><span class="info" id="info-4"><span data-l="fr">avec Albert Marcœur. Pièce musicale et sonore composée à partir des sons produits par les outils et les machines de l’imprimerie Bâtard à Nancy.</span><span data-l="en">with Albert Marcœur. A musical and sound piece composed from the sounds made by the tools and machines of the Bâtard print shop in Nancy.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-4" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/2356_details-typographiques-et">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
@@ -420,7 +574,7 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Bert Begar <span class="an">(2020)</span><span class="info" id="info-5"><span data-l="fr">Avec Albert Marcœur (texte et voix). Sur une proposition du label TRUC.</span><span data-l="en">With Albert Marcœur (text and voice). At the suggestion of the TRUC label.</span></span></span>
+        <span class="titre">Bert Begar <span class="an">(2020)</span><span class="info" id="info-5"><span data-l="fr">avec Albert Marcœur (texte et voix). Sur une proposition du label TRUC.</span><span data-l="en">with Albert Marcœur (text and voice). At the suggestion of the TRUC label.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-5" aria-expanded="false" data-embed="bandcamp" data-type="track" data-id="3974611844">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
@@ -438,7 +592,7 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Thomas James Folks <span class="an">(2018)</span><span class="info" id="info-7"><span data-l="fr">Avec Dylan James (contrebasse) : onze pièces enregistrées sur place à la chapelle St-Anne de Doëlan, le 17 mai 2016. Beg Rose Records.</span><span data-l="en">With Dylan James (double bass): eleven pieces recorded on location at the St-Anne chapel in Doëlan, 17 May 2016. Beg Rose Records.</span></span></span>
+        <span class="titre">Thomas James Folks <span class="an">(2018)</span><span class="info" id="info-7"><span data-l="fr">avec Dylan James (contrebasse) : onze pièces enregistrées sur place à la chapelle St-Anne de Doëlan, le 17 mai 2016. Beg Rose Records.</span><span data-l="en">with Dylan James (double bass): eleven pieces recorded on location at the St-Anne chapel in Doëlan, 17 May 2016. Beg Rose Records.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-7" aria-expanded="false" data-embed="bandcamp" data-id="4172337020">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
@@ -456,7 +610,16 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">33 à 3 <span class="an">(2012)</span><span class="info" id="info-9"><span data-l="fr">Trio improvisé avec Frédéric Bargeon-Briet et Nicolas Pointard, à La Minuscule, à Brest, le 11 novembre 2012.</span><span data-l="en">Improvised trio with Frédéric Bargeon-Briet and Nicolas Pointard, at La Minuscule in Brest, 11 November 2012.</span></span></span>
+        <span class="titre">Regards d’acier <span class="an">(2015)</span><span class="info" id="info-11"><span data-l="fr">avec Gaëlle Héraut (voix), extrait du spectacle Debout&nbsp;!, d’après l’œuvre de Daniil Harms.</span><span data-l="en">with Gaëlle Héraut (voice), excerpt from the show Debout&nbsp;!, after the work of Daniil Kharms.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-11" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/gaelle_eric/daniil-harms-regard-d-acier">
+          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
+          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
+        </button>
+        <a class="sr" href="https://soundcloud.com/gaelle_eric/daniil-harms-regard-d-acier" rel="noopener">SoundCloud : Regards d’acier</a>
+        <div class="player" hidden></div>
+      </li>
+      <li>
+        <span class="titre">33 à 3 <span class="an">(2012)</span><span class="info" id="info-9"><span data-l="fr">avec Frédéric Bargeon-Briet (contrebasse) et Nicolas Pointard (batterie). Improvisation à La Minuscule, à Brest, le 11 novembre 2012.</span><span data-l="en">with Frédéric Bargeon-Briet (double bass) and Nicolas Pointard (drums). Improvisation at La Minuscule, in Brest, 11 November 2012.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-9" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/bargeon-briet-pointard-thomas">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
@@ -465,7 +628,7 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Minuscule <span class="an">(2012)</span><span class="info" id="info-10"><span data-l="fr">Duo avec Laurent Paris, à La Minuscule, à Brest, le 21 avril 2012.</span><span data-l="en">Duo with Laurent Paris, at La Minuscule in Brest, 21 April 2012.</span></span></span>
+        <span class="titre">Minuscule <span class="an">(2012)</span><span class="info" id="info-10"><span data-l="fr">avec Laurent Paris (batterie). Improvisation à La Minuscule, à Brest, le 21 avril 2012.</span><span data-l="en">with Laurent Paris (drums). Improvisation at La Minuscule, in Brest, 21 April 2012.</span></span></span>
         <button type="button" class="btn petit play" aria-describedby="info-10" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/ric-thomas-laurent-paris-la">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
