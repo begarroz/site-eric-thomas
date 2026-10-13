@@ -239,6 +239,16 @@ h2 + h3{margin-top:0}
 .pieces li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;padding:.9rem 0;border-top:1px solid var(--rule)}
 .pieces li:last-child{border-bottom:1px solid var(--rule)}
 .pieces .titre{flex:1 1 14rem}
+.pieces .titre{position:relative}
+.info{display:block;margin-top:.2rem;font:.9rem/1.45 var(--sans);color:var(--mute);font-weight:400}
+/* Souris : le texte apparaît au survol du titre (ou au focus clavier du bouton) */
+@media (hover:hover){
+  .info{position:absolute;left:0;top:100%;z-index:6;width:max-content;max-width:min(30rem,70vw);margin-top:.35rem;padding:.65rem .85rem;
+        background:#161614;border:1px solid #3a3a37;border-radius:6px;color:var(--ink);box-shadow:0 6px 24px rgba(0,0,0,.5);
+        opacity:0;pointer-events:none;transform:translateY(-2px);transition:opacity .15s ease,transform .15s ease}
+  .pieces .titre:hover .info,.pieces li:has(.play:focus-visible) .info{opacity:1;transform:none}
+}
+/* Écran tactile : le texte reste affiché sous le titre */
 .pieces .an{font:.9rem var(--sans);color:var(--mute);margin-left:.35rem;white-space:nowrap}
 .player{flex-basis:100%;margin-top:.5rem}
 .player{background:#f1efe9;border-radius:6px;overflow:hidden}
@@ -374,8 +384,8 @@ footer p{margin:0}
 
     <ul class="pieces">
       <li>
-        <span class="titre">Oscillations Base <span class="an">(2025)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/oscillations-base">
+        <span class="titre">Oscillations Base <span class="an">(2025)</span><span class="info" id="info-1"><span data-l="fr">Avec Aurélie Brousse. Un portrait sonore d’une pointe de terre derrière la base sous-marine de Lorient, habitée de récits de départs, de liberté et d’ailleurs.</span><span data-l="en">With Aurélie Brousse. A sound portrait of a headland behind the Lorient submarine base, home to stories of departure, freedom and elsewhere.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-1" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/oscillations-base">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -383,8 +393,8 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Tournerie <span class="an">(2024)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="bandcamp" data-id="3741192901">
+        <span class="titre">Tournerie <span class="an">(2024)</span><span class="info" id="info-2"><span data-l="fr">Avec Florian Stéphant (Revox B77). « Copeaux », huit échantillons taillés dans des improvisations réalisées au Beg, le 17 mai 2024.</span><span data-l="en">With Florian Stéphant (Revox B77). “Copeaux”, eight samples cut from improvisations made at Beg on 17 May 2024.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-2" aria-expanded="false" data-embed="bandcamp" data-id="3741192901">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -392,8 +402,8 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Fouesnant, mes carnets sonores <span class="an">(2024)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/fouesnant-mes-carnets-sonores">
+        <span class="titre">Fouesnant, mes carnets sonores <span class="an">(2024)</span><span class="info" id="info-3"><span data-l="fr">Pièce sonore de 29 minutes.</span><span data-l="en">Sound piece, 29 minutes.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-3" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/fouesnant-mes-carnets-sonores">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -401,8 +411,8 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">23'56 – détails typographiques et sonores <span class="an">(2023)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/2356_details-typographiques-et">
+        <span class="titre">23'56 – détails typographiques et sonores <span class="an">(2023)</span><span class="info" id="info-4"><span data-l="fr">Pièce sonore de 23 minutes et 56 secondes.</span><span data-l="en">Sound piece, 23 minutes 56 seconds.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-4" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/eric_thomas_artiste-sonore/2356_details-typographiques-et">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -410,8 +420,17 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Solus @ galerie Artem, Quimper <span class="an">(2019)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/user-670516109/ericthomas-solus-190216-galerie-artem-quimper">
+        <span class="titre">Bert Begar <span class="an">(2020)</span><span class="info" id="info-5"><span data-l="fr">Avec Albert Marcœur (texte et voix). Sur une proposition du label TRUC.</span><span data-l="en">With Albert Marcœur (text and voice). At the suggestion of the TRUC label.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-5" aria-expanded="false" data-embed="bandcamp" data-type="track" data-id="3974611844">
+          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
+          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
+        </button>
+        <a class="sr" href="https://compilationstruc.bandcamp.com/track/bert-begar-le-football" rel="noopener">Bandcamp : Bert Begar, Le Football</a>
+        <div class="player" hidden></div>
+      </li>
+      <li>
+        <span class="titre">Solus @ galerie Artem, Quimper <span class="an">(2019)</span><span class="info" id="info-6"><span data-l="fr">Solo à la galerie Artem, à Quimper, le 16 février 2019, au finissage de l’exposition ExSitu.</span><span data-l="en">Solo at the Artem gallery in Quimper, 16 February 2019, at the closing of the ExSitu exhibition.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-6" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/user-670516109/ericthomas-solus-190216-galerie-artem-quimper">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -419,17 +438,8 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Solus @ église St-Louis, Brest <span class="an">(2019)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/user-670516109/ericthomas-solus-190202-eglise-st-louis-brest">
-          <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
-          <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
-        </button>
-        <a class="sr" href="https://soundcloud.com/user-670516109/ericthomas-solus-190202-eglise-st-louis-brest" rel="noopener">SoundCloud : Solus, église St-Louis, Brest</a>
-        <div class="player" hidden></div>
-      </li>
-      <li>
-        <span class="titre">Thomas James Folks <span class="an">(2018)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="bandcamp" data-id="4172337020">
+        <span class="titre">Thomas James Folks <span class="an">(2018)</span><span class="info" id="info-7"><span data-l="fr">Avec Dylan James (contrebasse) : onze pièces enregistrées sur place à la chapelle St-Anne de Doëlan, le 17 mai 2016. Beg Rose Records.</span><span data-l="en">With Dylan James (double bass): eleven pieces recorded on location at the St-Anne chapel in Doëlan, 17 May 2016. Beg Rose Records.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-7" aria-expanded="false" data-embed="bandcamp" data-id="4172337020">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -437,8 +447,8 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Found Small Extended Forms <span class="an">(2017)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="bandcamp" data-id="3431232027">
+        <span class="titre">Found Small Extended Forms <span class="an">(2017)</span><span class="info" id="info-8"><span data-l="fr">Quatorze pièces brèves pour guitare électrique préparée, jouée seule, sans re-enregistrement. Beg Rose Records.</span><span data-l="en">Fourteen short pieces for prepared electric guitar, played solo with no overdubs. Beg Rose Records.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-8" aria-expanded="false" data-embed="bandcamp" data-id="3431232027">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -446,8 +456,8 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">33 à 3 <span class="an">(2012)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/bargeon-briet-pointard-thomas">
+        <span class="titre">33 à 3 <span class="an">(2012)</span><span class="info" id="info-9"><span data-l="fr">Trio improvisé avec Frédéric Bargeon-Briet et Nicolas Pointard, à La Minuscule, à Brest, le 11 novembre 2012.</span><span data-l="en">Improvised trio with Frédéric Bargeon-Briet and Nicolas Pointard, at La Minuscule in Brest, 11 November 2012.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-9" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/bargeon-briet-pointard-thomas">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -455,8 +465,8 @@ footer p{margin:0}
         <div class="player" hidden></div>
       </li>
       <li>
-        <span class="titre">Minuscule <span class="an">(2012)</span></span>
-        <button type="button" class="btn petit play" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/ric-thomas-laurent-paris-la">
+        <span class="titre">Minuscule <span class="an">(2012)</span><span class="info" id="info-10"><span data-l="fr">Duo avec Laurent Paris, à La Minuscule, à Brest, le 21 avril 2012.</span><span data-l="en">Duo with Laurent Paris, at La Minuscule in Brest, 21 April 2012.</span></span></span>
+        <button type="button" class="btn petit play" aria-describedby="info-10" aria-expanded="false" data-embed="soundcloud" data-url="https://soundcloud.com/begarrozpublishing/ric-thomas-laurent-paris-la">
           <span class="o" data-l="fr">Écouter ici</span><span class="c" data-l="fr">Fermer</span>
           <span class="o" data-l="en">Listen here</span><span class="c" data-l="en">Close</span>
         </button>
@@ -614,7 +624,7 @@ footer p{margin:0}
   /* ---------- Lecteurs audio : chargés seulement au clic ---------- */
   function adresseLecteur(b) {
     if (b.getAttribute('data-embed') === 'bandcamp') {
-      return { h: 120, src: 'https://bandcamp.com/EmbeddedPlayer/album=' + b.getAttribute('data-id') +
+      return { h: 120, src: 'https://bandcamp.com/EmbeddedPlayer/' + (b.getAttribute('data-type') || 'album') + '=' + b.getAttribute('data-id') +
         '/size=large/bgcol=f1efe9/linkcol=566659/tracklist=false/artwork=small/transparent=true/' };
     }
     return { h: 166, src: 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(b.getAttribute('data-url')) +
