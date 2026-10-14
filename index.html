@@ -221,15 +221,15 @@ p{margin:0 0 1.1rem}
 
 /* Dates */
 .dates{list-style:none;margin:0 0 1.5rem;padding:0}
-.dates li{padding:1.1rem 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:5.5rem 1fr;gap:.25rem 1rem}
+.dates li{padding:1.1rem 0;border-top:1px solid var(--rule);display:grid;grid-template-columns:7rem 1fr;gap:.25rem 1rem}
 .dates li:last-child{border-bottom:1px solid var(--rule)}
-.dates time{font:500 .95rem/1.5 var(--sans);padding-top:.1rem}
+.dates time{font:500 .95rem/1.5 var(--sans);padding-top:.1rem;white-space:nowrap}
 .ev p{margin:0}
 .ev-titre{font:500 1rem/1.45 var(--sans);letter-spacing:.04em}
 .ev-avec,.ev-lieu{font:.95rem/1.5 var(--sans);color:var(--mute)}
 .ev-avec{margin-top:.25rem}
 h2 + h3{margin-top:0}
-@media (max-width:560px){.dates li{grid-template-columns:4.25rem 1fr}}
+@media (max-width:560px){.dates li{grid-template-columns:6rem 1fr}}
 
 /* Écouter */
 .disc{margin:0 0 2.5rem}
@@ -343,6 +343,30 @@ footer p{margin:0}
         </div>
       </li>
     -->
+    <h3>2027</h3>
+    <ol class="dates">
+      <li>
+        <time datetime="2027-12-10">10-14.12</time>
+        <div class="ev">
+          <p class="ev-titre">ÄANEN MUSIIKKI tour 2/2</p>
+          <p class="ev-lieu">@ Stockholm, Copenhague, Hambourg, Amsterdam, Bruxelles</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2027-11-25">25.11-09.12</time>
+        <div class="ev">
+          <p class="ev-titre"><span data-l="fr">Résidence ÄANEN MUSIIKKI tour</span><span data-l="en">Residency ÄANEN MUSIIKKI tour</span></p>
+          <p class="ev-lieu">@ Villa Kivi, Helsinki Fl</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2027-11-18">18-24.11</time>
+        <div class="ev">
+          <p class="ev-titre">ÄANEN MUSIIKKI tour 1/2</p>
+          <p class="ev-lieu">@ Paris, Berlin, Varsovie, Vilnius, Riga, Tallinn, Helsinki</p>
+        </div>
+      </li>
+    </ol>
     <h3>2026</h3>
     <ol class="dates">
       <li>
